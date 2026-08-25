@@ -1,496 +1,1481 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech Jagannath – Engineering Technology That Solves Real Problems</title>
+  <title>Jagannath Tech Solutions</title>
+  <meta name="description"
+    content="Jagannath Tech Solutions engineers enterprise-grade AI systems, intelligent campus telemetry OS (TapAxe), AI examination studios (ExamCraft), and resilient cloud architectures for institutions and global enterprises." />
+  <meta name="keywords"
+    content="Jagannath Tech Solutions, Enterprise AI, TapAxe, ExamCraft, AI Attendance, AI Question Paper Generator, SaaS Development, Cloud Architecture, Machine Learning, Vijayapura, Basawaraj Biradar" />
+  <meta name="author" content="Jagannath Tech Solutions" />
+  <meta name="robots" content="index, follow" />
 
-    <!-- SEO -->
-  <meta name="description" content="Tech Jagannath develops AI, IoT, automation, cloud and software solutions. Creator of TapAxe Smart Student Safety & Attendance System for schools and institutions.">
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://techjagannath.com/" />
+  <meta property="og:title" content="Jagannath Tech Solutions | SMART SOLUTIONS • GLOBAL IMPACT" />
+  <meta property="og:description"
+    content="Transforming enterprises and universities with proprietary AI platforms, biometrics, and distributed cloud computing." />
+  <meta property="og:image" content="assets/logo.png" />
 
-  <meta name="keywords" content="Tech Jagannath, TapAxe, Student Attendance System, NFC Attendance, School Safety, IoT Solutions, AI Solutions, Software Development">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jagannath Tech Solutions | SMART SOLUTIONS • GLOBAL IMPACT" />
+  <meta name="twitter:description"
+    content="Proprietary AI platforms, biometrics telemetry, and distributed cloud software." />
+  <meta name="twitter:image" content="assets/logo.png" />
 
-  <link rel="canonical" href="https://techjagannath.com/">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Tech Jagannath">
-  <meta property="og:description" content="Engineering Technology That Solves Real Problems">
-  <meta property="og:url" content="https://techjagannath.com/">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tech Jagannath">
-  <meta name="twitter:description" content="Engineering Technology That Solves Real Problems">
-
-  <!-- Search Engine Indexing -->
-  <meta name="robots" content="index, follow">
-
-  <!-- Organization Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Tech Jagannath",
-    "url":"https://techjagannath.com",
-    "email":"info@techjagannath.com",
-    "telephone":"+918884047775",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Vijayapura",
-      "addressRegion":"Karnataka",
-      "addressCountry":"IN"
-    }
-  }
-  </script>
-
-  <link rel="stylesheet" href="style.css" />
+  <!-- Typography: Google Fonts (Inter + Plus Jakarta Sans + JetBrains Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Master Enterprise Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════════════════
-     NAVBAR
-════════════════════════════════════════════ -->
-<header class="navbar" id="navbar">
-  <div class="container nav-inner">
-    <a href="#" class="logo">
-      <div class="logo-icon">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-          <rect width="36" height="36" rx="8" fill="#1A1AFF"/>
-          <path d="M8 8H16V20H8V8Z" fill="white"/>
-          <path d="M20 16H28V28H20V16Z" fill="white"/>
-          <path d="M20 8H28V14H20V8Z" fill="white" opacity="0.5"/>
-        </svg>
-      </div>
-      <span class="logo-text">TECH<br/><strong>JAGANNATH</strong></span>
-    </a>
-
-    <nav class="nav-links">
-      <a href="#" class="active">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#services">Services</a>
-      <a href="#products">Products</a>
-      <a href="#projects">Projects</a>
-      <a href="#careers">Careers</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a href="#contact" class="btn btn-primary nav-cta">Let's Talk <span class="arrow">→</span></a>
-
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+  <!-- ─── PRELOADER ──────────────────────────────────────────────── -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader-brand-icon">
+      <img src="assets/logo.png" alt="Jagannath Tech Solutions" width="56" height="56" />
+    </div>
+    <div class="preloader-bar-wrap">
+      <div class="preloader-bar-fill"></div>
+    </div>
   </div>
-</header>
 
-<!-- ═══════════════════════════════════════════
-     HERO
-════════════════════════════════════════════ -->
-<section class="hero" id="home">
-  <div class="container hero-inner">
-    <div class="hero-text" data-animate="fadeUp">
-      <p class="eyebrow">Building Smart Digital Ecosystems</p>
-      <h1>Tech Jagannath – Engineering Technology<br/>That Solves <span class="accent">Real Problems</span></h1>
-      <p class="hero-desc">We design and build software, IoT devices, automation systems, and AI-powered solutions for businesses and institutions.</p>
-      <div class="hero-tags">
-        <span class="tag"><i class="icon-dot blue"></i>AI</span>
-        <span class="tag"><i class="icon-dot blue"></i>IoT</span>
-        <span class="tag"><i class="icon-dot blue"></i>Mobile Apps</span>
-        <span class="tag"><i class="icon-dot blue"></i>Automation</span>
-        <span class="tag"><i class="icon-dot blue"></i>Cloud</span>
-      </div>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Start a Project <span class="arrow">→</span></a>
-        <a href="#demo" class="btn btn-ghost"><span class="play-btn">▶</span> Watch Demo</a>
+  <!-- ─── 0. ENTERPRISE NAVBAR (COMPACT 72PX WITH GLASS BLUR) ────── -->
+  <header id="navbar" class="navbar" role="banner">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Jagannath Tech Solutions Home">
+        <div class="brand-icon-official">
+          <img src="assets/logo.png" alt="Jagannath Tech Solutions Logo" width="48" height="48" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Jagannath Tech Solutions</span>
+          <span class="brand-subtitle">SMART SOLUTIONS • GLOBAL IMPACT</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav id="navMenu" class="nav-menu" role="navigation" aria-label="Primary Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#industries" class="nav-link">Industries</a>
+        <a href="#techstack" class="nav-link">Tech Stack</a>
+        <a href="#casestudies" class="nav-link">Case Studies</a>
+        <a href="#team" class="nav-link">Team</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Buttons & Mobile Toggle -->
+      <div class="nav-actions">
+        <button id="btnOpenConsultModal" class="btn btn-primary btn-sm" aria-label="Book Consultation">
+          <span>Book Consultation</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+        </button>
       </div>
     </div>
+  </header>
 
-    <div class="hero-visual" data-animate="fadeIn">
-      <div class="cube-wrap">
-        <!-- Central Cube -->
-        <div class="hero-cube">
-          <div class="cube-logo">
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-              <rect width="60" height="60" rx="12" fill="url(#cubeGrad)"/>
-              <path d="M12 12H28V36H12V12Z" fill="white"/>
-              <path d="M32 24H48V48H32V24Z" fill="white"/>
-              <path d="M32 12H48V22H32V12Z" fill="white" opacity="0.5"/>
-              <defs>
-                <linearGradient id="cubeGrad" x1="0" y1="0" x2="60" y2="60">
-                  <stop stop-color="#3B3BFF"/>
-                  <stop offset="1" stop-color="#9B5CFF"/>
-                </linearGradient>
-              </defs>
-            </svg>
+  <!-- ─── MAIN CONTENT CONTAINER ─────────────────────────────────── -->
+  <main id="mainContent">
+
+    <!-- ─── 1. HERO SECTION (INTERACTIVE SLIDER + AMBIENT GLOW) ────── -->
+    <section id="hero" class="hero-section" aria-label="Hero Section">
+      <div class="ambient-glow glow-1"></div>
+      <div class="ambient-glow glow-2"></div>
+
+      <div class="container hero-container">
+        <!-- Hero Slider Top Tabs Rail -->
+        <div class="hero-carousel-topbar">
+          <div id="heroTabsRail" class="hero-tabs-rail" role="tablist" aria-label="Product Showcase Tabs">
+            <!-- Rendered by main.js (heroSlides) -->
           </div>
-          <div class="cube-face cube-glow"></div>
+          <div class="hero-slider-arrows">
+            <button id="heroPrevBtn" class="hero-arrow-btn" aria-label="Previous Slide">‹</button>
+            <button id="heroNextBtn" class="hero-arrow-btn" aria-label="Next Slide">›</button>
+          </div>
         </div>
 
-        <!-- Orbit Icons -->
-        <div class="orbit-item orbit-top">
-          <div class="orbit-icon">🧠</div>
-          <span>AI</span>
-        </div>
-        <div class="orbit-item orbit-right">
-          <div class="orbit-icon">☁️</div>
-          <span>Cloud</span>
-        </div>
-        <div class="orbit-item orbit-bottom">
-          <div class="orbit-icon">🔒</div>
-          <span>Security</span>
-        </div>
-        <div class="orbit-item orbit-left">
-          <div class="orbit-icon">📡</div>
-          <span>IoT</span>
-        </div>
-        <div class="orbit-item orbit-bl">
-          <div class="orbit-icon">📱</div>
-          <span>Mobile</span>
-        </div>
-        <div class="orbit-item orbit-br">
-          <div class="orbit-icon">⚙️</div>
-          <span>Automation</span>
-        </div>
+        <!-- Hero Slider Viewport & Track -->
+        <div id="heroSliderViewport" class="hero-slider-viewport">
+          <div id="heroSliderTrack" class="hero-slider-track">
+            <!-- Dynamically populated or static fallback slide -->
+            <div class="hero-slide active">
+              <div class="hero-grid">
+                <div class="hero-content">
+                  <div class="hero-pill-badge">
+                    <span class="badge-dot"></span>
+                    <span>Enterprise AI & Cloud SaaS</span>
+                  </div>
 
-        <!-- Connector Lines -->
-        <svg class="connector-lines" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="250" y1="80" x2="250" y2="200" stroke="#3B3BFF" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
-          <line x1="380" y1="150" x2="290" y2="220" stroke="#3B3BFF" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
-          <line x1="380" y1="350" x2="290" y2="280" stroke="#3B3BFF" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
-          <line x1="250" y1="420" x2="250" y2="300" stroke="#3B3BFF" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
-          <line x1="120" y1="350" x2="210" y2="280" stroke="#3B3BFF" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
-          <line x1="120" y1="150" x2="210" y2="220" stroke="#3B3BFF" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
-          <circle cx="250" cy="250" r="140" stroke="#3B3BFF" stroke-width="1" stroke-dasharray="6 6" opacity="0.15"/>
-          <circle cx="250" cy="250" r="80" stroke="#3B3BFF" stroke-width="1" opacity="0.08"/>
-        </svg>
-      </div>
-    </div>
-  </div>
+                  <h1 class="hero-title">
+                    Architecting <span class="text-gradient">Intelligent Systems</span> For Global Impact
+                  </h1>
 
-  <!-- Social Sidebar -->
-  <div class="social-sidebar">
-    <a href="#" aria-label="Facebook">f</a>
-    <a href="#" aria-label="LinkedIn">in</a>
-    <a href="#" aria-label="Twitter">𝕏</a>
-    <a href="#" aria-label="Instagram">◎</a>
-  </div>
-</section>
+                  <p class="hero-subtitle lead-text">
+                    We engineer proprietary LLM pipelines, intelligent enterprise SaaS platforms (TapAxe, ExamCraft),
+                    and resilient cloud architectures that empower institutions and forward-thinking enterprises
+                    globally.
+                  </p>
 
-<!-- ═══════════════════════════════════════════
-     SERVICES
-════════════════════════════════════════════ -->
-<section class="services" id="services">
-  <div class="container services-inner">
-    <div class="services-header" data-animate="fadeUp">
-      <p class="eyebrow">What We Do</p>
-      <h2>Technology Solutions<br/>For A Smarter Tomorrow</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="services-grid" data-animate="fadeUp" data-delay="0.1">
-      <div class="service-card">
-        <div class="service-icon ai">🧠</div>
-        <h3>Artificial Intelligence</h3>
-        <p>AI-powered solutions to automate processes and drive intelligence.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon iot">📡</div>
-        <h3>Internet of Things</h3>
-        <p>Connected devices and smart systems for real-time insights.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon mobile">📱</div>
-        <h3>Mobile Development</h3>
-        <p>High-performance mobile apps for iOS and Android.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon cloud">☁️</div>
-        <h3>Cloud Solutions</h3>
-        <p>Scalable, secure and reliable cloud infrastructure.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon erp">💻</div>
-        <h3>ERP & Custom Software</h3>
-        <p>Custom software and ERP systems tailored for your business.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon cyber">🔒</div>
-        <h3>Cyber Security</h3>
-        <p>Protecting your data and systems with next-gen security.</p>
-      </div>
-    </div>
-  </div>
-</section>
+                  <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary btn-lg">
+                      <span>Explore Flagship Products</span>
+                      <span class="btn-arrow">→</span>
+                    </a>
+                    <button onclick="openConsultation('General Architecture Consultation')"
+                      class="btn btn-secondary btn-lg">
+                      <span>Book Consultation</span>
+                    </button>
+                  </div>
 
-<!-- ═══════════════════════════════════════════
-     PRODUCTS
-════════════════════════════════════════════ -->
-<section class="products" id="products">
-  <div class="container">
-    <div class="products-header" data-animate="fadeUp">
-      <div>
-        <p class="eyebrow">Our Products</p>
-        <h2>Solutions We Are Building</h2>
-      </div>
-      <div class="products-nav">
-        <button class="prod-nav-btn" id="prodPrev" aria-label="Previous">←</button>
-        <button class="prod-nav-btn" id="prodNext" aria-label="Next">→</button>
-      </div>
-    </div>
+                  <!-- Live Metrics Row -->
+                  <div class="hero-slide-metrics">
+                    <div class="slide-metric">
+                      <span class="metric-val">&lt; 24ms</span>
+                      <span class="metric-lbl">Inference Latency</span>
+                    </div>
+                    <div class="slide-metric">
+                      <span class="metric-val">99.99%</span>
+                      <span class="metric-lbl">Uptime SLA</span>
+                    </div>
+                    <div class="slide-metric">
+                      <span class="metric-val">SOC-2</span>
+                      <span class="metric-lbl">Enterprise Ready</span>
+                    </div>
+                  </div>
+                </div>
 
-    <!-- Timeline dots -->
-    <div class="products-timeline">
-      <div class="timeline-dot active"></div>
-      <div class="timeline-line"></div>
-      <div class="timeline-dot icon">🧠</div>
-      <div class="timeline-line"></div>
-      <div class="timeline-dot icon">🎓</div>
-      <div class="timeline-line"></div>
-      <div class="timeline-dot icon">📡</div>
-    </div>
+                <!-- Hero Interactive Terminal / Dashboard Preview -->
+                <div class="hero-preview-col">
+                  <div class="hero-dashboard-card">
+                    <div class="dash-topbar">
+                      <div class="window-controls">
+                        <span class="win-dot red"></span>
+                        <span class="win-dot yellow"></span>
+                        <span class="win-dot green"></span>
+                      </div>
+                      <span class="dash-tab-title">techjagannath-neural-core.live</span>
+                      <span class="dash-live-badge">
+                        <span class="live-pulse"></span> LIVE
+                      </span>
+                    </div>
 
-    <div class="products-track" id="productsTrack">
-      <!-- TapAxe -->
-      <div class="product-card featured" data-animate="fadeUp">
-        <div class="product-card-top">
-          <div class="tapaxe-logo">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="6" fill="url(#tapGrad)"/>
-              <path d="M6 6H14V18H6V6Z" fill="white"/>
-              <path d="M18 12H26V26H18V12Z" fill="white"/>
-              <defs>
-                <linearGradient id="tapGrad" x1="0" y1="0" x2="32" y2="32">
-                  <stop stop-color="#00C896"/>
-                  <stop offset="1" stop-color="#0099FF"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <div>
-              <strong>TapAxe</strong>
-              <small>School Attendance Ecosystem</small>
+                    <div class="dash-stats-row">
+                      <div class="dash-stat-box">
+                        <span class="stat-label">Daily Active Telemetry</span>
+                        <span class="stat-val">120,000+</span>
+                        <span class="stat-sub up">▲ 99.98% accuracy</span>
+                      </div>
+                      <div class="dash-stat-box">
+                        <span class="stat-label">Partner Institutions</span>
+                        <span class="stat-val">80+ Campuses</span>
+                        <span class="stat-sub blue">TapAxe & ExamCraft</span>
+                      </div>
+                    </div>
+
+                    <div class="neural-terminal-box">
+                      <div class="term-line">
+                        <span class="term-prompt">$</span> init --engine=tapaxe-biometrics --mesh=aws-multi-region
+                      </div>
+                      <div class="term-line term-success">
+                        ✓ Connected: 240+ Edge Biometric Nodes [Latency: 18ms]
+                      </div>
+                      <div class="term-line">
+                        <span class="term-prompt">$</span> load-pipeline --rag=examcraft-curriculum-v4 --status=active
+                      </div>
+                      <div class="term-line term-info">
+                        ℹ System Operational: 3.5M+ Questions Authored with 100% Bloom Match
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <p>Smart attendance management system for schools and institutes.</p>
-        <a href="#" class="learn-more">Learn More →</a>
       </div>
+    </section>
 
-      <!-- AI Automation Suite -->
-      <div class="product-card" data-animate="fadeUp" data-delay="0.1">
-        <div class="product-icon">🧠</div>
-        <h3>AI Automation Suite</h3>
-        <p>Automating business processes with AI-driven workflows.</p>
-        <span class="badge coming-soon">Coming Soon</span>
-      </div>
-
-      <!-- Smart Campus -->
-      <div class="product-card" data-animate="fadeUp" data-delay="0.2">
-        <div class="product-icon">🎓</div>
-        <h3>Smart Campus Platform</h3>
-        <p>A unified platform for campus operations and management.</p>
-        <span class="badge coming-soon">Coming Soon</span>
-      </div>
-
-      <!-- IoT Monitoring -->
-      <div class="product-card" data-animate="fadeUp" data-delay="0.3">
-        <div class="product-icon">📡</div>
-        <h3>IoT Monitoring System</h3>
-        <p>Real-time monitoring and analytics for smart devices.</p>
-        <span class="badge coming-soon">Coming Soon</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     PROCESS
-════════════════════════════════════════════ -->
-<section class="process" id="process">
-  <div class="container">
-    <div class="process-header" data-animate="fadeUp">
-      <p class="eyebrow">Our Process</p>
-      <h2>How We Build<br/>Solutions</h2>
-    </div>
-    <div class="process-steps" data-animate="fadeUp" data-delay="0.1">
-      <div class="process-step">
-        <div class="step-icon">💡</div>
-        <div class="step-num">01</div>
-        <div class="step-label">Idea</div>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="process-step">
-        <div class="step-icon">🔍</div>
-        <div class="step-num">02</div>
-        <div class="step-label">Research</div>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="process-step">
-        <div class="step-icon">✏️</div>
-        <div class="step-num">03</div>
-        <div class="step-label">Design</div>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="process-step">
-                <div class="step-icon">⚙️</div>
-        <div class="step-num">04</div>
-        <div class="step-label">Development</div>
-      </div>   
-      <div class="step-arrow">→</div>
-      <div class="process-step">
-        <div class="step-icon">🚀</div>
-        <div class="step-num">05</div>
-        <div class="step-label">Deployment</div>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="process-step">
-        <div class="step-icon">📈</div>
-        <div class="step-num">06</div>
-        <div class="step-label">Growth</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     STATS
-════════════════════════════════════════════ -->
-<section class="stats">
-  <!-- <div class="container stats-grid">
-    <div class="stat-card" data-animate="fadeUp">
-      <div class="stat-number blue" data-count="10000">0</div>
-      <div class="stat-plus blue">+</div>
-      <div class="stat-label">Attendance Records<br/>Processed Daily</div>
-      <div class="stat-icon">👥</div>
-    </div>
-    <div class="stat-card" data-animate="fadeUp" data-delay="0.1">
-      <div class="stat-number purple" data-count="99.9" data-decimal="1">0</div>
-      <div class="stat-plus purple">%</div>
-      <div class="stat-label">System<br/>Uptime</div>
-      <div class="stat-icon">🛡️</div>
-    </div>
-    <div class="stat-card" data-animate="fadeUp" data-delay="0.2">
-      <div class="stat-number orange">24/7</div>
-      <div class="stat-label">System<br/>Monitoring</div>
-      <div class="stat-icon">🕐</div>
-    </div>
-    <div class="stat-card" data-animate="fadeUp" data-delay="0.3">
-      <div class="stat-number teal" data-count="100">0</div>
-      <div class="stat-plus teal">+</div>
-      <div class="stat-label">Projects<br/>Delivered</div>
-      <div class="stat-icon">📦</div>
-    </div>
-    <div class="stat-card" data-animate="fadeUp" data-delay="0.4">
-      <div class="stat-number green" data-count="50">0</div>
-      <div class="stat-plus green">+</div>
-      <div class="stat-label">Happy<br/>Clients</div>
-      <div class="stat-icon">😊</div>
-    </div>
-  </div> -->
-</section>
-
-<!-- ═══════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════ -->
-<footer class="footer" id="contact">
-  <div class="container footer-grid">
-    <!-- Brand -->
-    <div class="footer-brand">
-      <a href="#" class="logo">
-        <div class="logo-icon">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <rect width="36" height="36" rx="8" fill="#1A1AFF"/>
-            <path d="M8 8H16V20H8V8Z" fill="white"/>
-            <path d="M20 16H28V28H20V16Z" fill="white"/>
-            <path d="M20 8H28V14H20V8Z" fill="white" opacity="0.5"/>
-          </svg>
+    <!-- ─── 2. TRUSTED BY / PARTNERS & STATS SECTION ──────────────── -->
+    <section id="partners" class="partners-marquee-section" aria-label="Institutional Partners">
+      <div class="container">
+        <div class="marquee-header-label">Trusted by Leading Universities, Academic Trusts & Enterprise Organizations
         </div>
-        <span class="logo-text">TECH<br/><strong>JAGANNATH</strong></span>
-      </a>
-      <p>We build smart digital ecosystems that empower businesses and institutions to grow, automate and succeed.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="#" aria-label="Twitter">𝕏</a>
-        <a href="#" aria-label="Instagram">◎</a>
-        <a href="#" aria-label="YouTube">▶</a>
-      </div>
-    </div>
-
-    <!-- Quick Links -->
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Services -->
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#">AI Solutions</a></li>
-        <li><a href="#">IoT Solutions</a></li>
-        <li><a href="#">Mobile Development</a></li>
-        <li><a href="#">Cloud Solutions</a></li>
-        <li><a href="#">ERP Solutions</a></li>
-        <li><a href="#">Cyber Security</a></li>
-      </ul>
-    </div>
-
-    <!-- Products -->
-    <div class="footer-col">
-      <h4>Products</h4>
-      <ul>
-        <li><a href="#">TapAxe</a></li>
-        <li><a href="#">AI Automation Suite</a></li>
-        <li><a href="#">Smart Campus Platform</a></li>
-        <li><a href="#">IoT Monitoring System</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer-col">
-      <h4>Contact Us</h4>
-      <ul class="footer-contact">
-        <li><span>📍</span> Vijaypura, Karnataka, India</li>
-        <li><span>✉️</span> info@techjagannath.com</li>
-        <li><span>📞</span> +91 8884047775</li>
-      </ul>
-      <div class="footer-map">
-        <div class="map-placeholder">
-          <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="200" height="100" rx="8" fill="#EEF0FF"/>
-            <ellipse cx="100" cy="50" rx="60" ry="30" stroke="#C0C8FF" stroke-width="1" fill="none"/>
-            <ellipse cx="100" cy="50" rx="40" ry="20" stroke="#C0C8FF" stroke-width="1" fill="none"/>
-            <circle cx="110" cy="42" r="3" fill="#1A1AFF"/>
-            <circle cx="95" cy="55" r="2" fill="#1A1AFF" opacity="0.5"/>
-            <circle cx="130" cy="48" r="2" fill="#1A1AFF" opacity="0.5"/>
-          </svg>
+        <div id="partnersMarqueeWrapper" class="marquee-wrapper">
+          <div id="partnersMarqueeTrack" class="marquee-track">
+            <!-- Rendered by main.js from data.js -->
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- Animated Achievements & Statistics Grid -->
+    <section id="stats" class="stats-section" aria-label="Key Achievements">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Proven Enterprise Impact</span>
+          </div>
+          <h2>Powering Mission-Critical Operations at Scale</h2>
+          <p class="lead-text">Measurable reliability, sub-second telemetry, and institutional adoption across all
+            software deployments.</p>
+        </div>
+
+        <div id="statsCarouselGrid" class="stats-carousel-grid">
+          <!-- Rendered dynamically by main.js -->
+        </div>
+
+        <!-- Trust Signals Row -->
+        <div class="trust-ticker-container">
+          <div class="trust-ticker-label">Enterprise-Grade Compliance & Standards</div>
+          <div class="trust-badges-grid">
+            <div class="trust-badge-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <span>SOC-2 Aligned Architecture</span>
+            </div>
+            <div class="trust-badge-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <span>256-Bit Data Encryption</span>
+            </div>
+            <div class="trust-badge-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>DPDP & GDPR Compliant</span>
+            </div>
+            <div class="trust-badge-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+              <span>99.99% Availability SLA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 3. ABOUT US SECTION ───────────────────────────────────── -->
+    <section id="about" class="about-section" aria-label="About Jagannath Tech Solutions">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content-col" data-animate="fadeIn">
+            <div class="section-badge">
+              <span class="badge-dot"></span>
+              <span>Our Story & Philosophy</span>
+            </div>
+            <h2>Pioneering Practical AI & Cloud Innovation from Vijayapura</h2>
+            <p class="about-story">
+              Founded by <strong>Basawaraj Biradar</strong>, Jagannath Tech Solutions has evolved into an enterprise
+              engineering powerhouse. We bridge the gap between cutting-edge Artificial Intelligence research and
+              resilient, real-world software applications that solve high-stakes challenges.
+            </p>
+            <p class="about-story">
+              Our engineering culture is defined by performance, data sovereignty, and human-centric design. From our
+              flagship campus telemetry OS (TapAxe) to our curriculum-aligned generative AI studio (ExamCraft), we
+              create products that eliminate friction and unlock human potential.
+            </p>
+
+            <div class="mission-vision-cards">
+              <div class="mv-card">
+                <h4><span style="color: var(--primary); margin-right: 8px;">🎯</span> Our Mission</h4>
+                <p>Deliver dependable, secure, and accessible enterprise AI and cloud solutions that transform
+                  educational institutions and modern businesses.</p>
+              </div>
+              <div class="mv-card">
+                <h4><span style="color: var(--primary); margin-right: 8px;">🔭</span> Our Vision</h4>
+                <p>To establish India as a global benchmark for practical, high-throughput enterprise AI SaaS platforms
+                  and mission-critical cloud engineering.</p>
+              </div>
+            </div>
+
+            <div class="core-values-list">
+              <span class="value-pill">⚡ High Velocity Execution</span>
+              <span class="value-pill">🛡️ Uncompromising Data Privacy</span>
+              <span class="value-pill">🧠 AI-Native Architecture</span>
+              <span class="value-pill">🤝 Long-Term Client Partnership</span>
+            </div>
+          </div>
+
+          <div class="about-visual-col" data-animate="fadeIn" data-delay="0.1">
+            <div class="about-visual-panel">
+              <div class="about-stat-highlight">
+                <h3>80+ Institutions</h3>
+                <p>Empowered across higher education, technical universities, and private school consortia.</p>
+              </div>
+              <div class="about-stat-highlight">
+                <h3>120k+ Daily Users</h3>
+                <p>Interacting with our edge facial biometrics, WhatsApp parent bots, and assessment tools daily.</p>
+              </div>
+              <div class="about-stat-highlight">
+                <h3>100% In-House R&D</h3>
+                <p>Proprietary algorithms, hardware firmware, and cloud microservices built from first principles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 4. CORE SERVICES SECTION (13 SERVICES) ────────────────── -->
+    <section id="services" class="services-section" aria-label="Core Engineering Services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Comprehensive Solutions</span>
+          </div>
+          <h2>Full-Spectrum Enterprise Services</h2>
+          <p class="lead-text">From strategic AI architecture to mission-critical cloud deployments, we build software
+            designed for enterprise scale.</p>
+        </div>
+
+        <div class="services-grid-13">
+          <!-- 1. AI & ML Solutions -->
+          <div class="service-card-modern" data-animate="fadeIn">
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 2a8 8 0 0 0-8 8c0 3.36 2.07 6.24 5 7.42V20a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2.58c2.93-1.18 5-4.06 5-7.42a8 8 0 0 0-8-8z" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
+                <path d="M9 13a3 3 0 0 0 6 0" />
+              </svg>
+            </div>
+            <h3 class="service-title">Enterprise AI & ML</h3>
+            <p class="service-description">Custom predictive algorithms, deep learning neural networks, and computer
+              vision models optimized for production latency.</p>
+            <div class="service-feature-pills">
+              <span>Computer Vision</span>
+              <span>Predictive Models</span>
+              <span>PyTorch / TF</span>
+            </div>
+          </div>
+
+          <!-- 2. Generative AI & LLM Systems -->
+          <div class="service-card-modern" data-animate="fadeIn" data-delay="0.05">
+            <div class="service-icon-box indigo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+            </div>
+            <h3 class="service-title">Generative AI & LLMs</h3>
+            <p class="service-description">Tailored domain-specific LLM fine-tuning, autonomous multi-agent
+              orchestration, and prompt engineering pipelines.</p>
+            <div class="service-feature-pills">
+              <span>Fine-Tuning</span>
+              <span>Multi-Agent</span>
+              <span>LangChain</span>
+            </div>
+          </div>
+
+          <!-- 3. RAG Architecture -->
+          <div class="service-card-modern" data-animate="fadeIn" data-delay="0.1">
+            <div class="service-icon-box cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+            </div>
+            <h3 class="service-title">Enterprise RAG Pipelines</h3>
+            <p class="service-description">Private vector retrieval architecture with semantic caching, knowledge graph
+              grounding, and citation validation.</p>
+            <div class="service-feature-pills">
+              <span>Pinecone</span>
+              <span>pgvector</span>
+              <span>Zero Hallucination</span>
+            </div>
+          </div>
+
+          <!-- 4. Full-Cycle SaaS Engineering -->
+          <div class="service-card-modern" data-animate="fadeIn" data-delay="0.15">
+            <div class="service-icon-box purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </div>
+            <h3 class="service-title">Full-Cycle SaaS Engineering</h3>
+            <p class="service-description">End-to-end multi-tenant product engineering, billing integrations, tenant
+              isolation, and automated telemetry.</p>
+            <div class="service-feature-pills">
+              <span>Multi-Tenancy</span>
+              <span>Stripe / Razorpay</span>
+              <span>RBAC</span>
+            </div>
+          </div>
+
+          <!-- 5. Custom Web Applications -->
+          <div class="service-card-modern" data-animate="fadeIn">
+            <div class="service-icon-box emerald">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            </div>
+            <h3 class="service-title">Custom Web Applications</h3>
+            <p class="service-description">Ultra-fast, accessible web portals engineered in Next.js, React, and
+              TypeScript with rigorous test coverage.</p>
+            <div class="service-feature-pills">
+              <span>Next.js 14</span>
+              <span>TypeScript</span>
+              <span>Modern UX</span>
+            </div>
+          </div>
+
+          <!-- 6. Mobile Application Engineering -->
+          <div class="service-card-modern" data-animate="fadeIn" data-delay="0.05">
+            <div class="service-icon-box amber">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+              </svg>
+            </div>
+            <h3 class="service-title">Mobile App Development</h3>
+            <p class="service-description">Cross-platform iOS and Android apps powered by Flutter and React Native with
+              offline-first synchronization.</p>
+            <div class="service-feature-pills">
+              <span>Flutter</span>
+              <span>React Native</span>
+              <span>Offline First</span>
+            </div>
+          </div>
+
+          <!-- 7. Cloud Architecture & DevOps -->
+          <div class="service-card-modern" data-animate="fadeIn" data-delay="0.1">
+            <div class="service-icon-box rose">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+              </svg>
+            </div>
+            <h3 class="service-title">Cloud & DevOps Engineering</h3>
+            <p class="service-description">Kubernetes orchestration, automated CI/CD pipelines, AWS/Azure serverless
+              architectures, and 99.99% uptime.</p>
+            <div class="service-feature-pills">
+              <span>Kubernetes</span>
+              <span>Docker</span>
+              <span>GitHub Actions</span>
+            </div>
+          </div>
+
+          <!-- 8. Edge AI & IoT Integration -->
+          <div class="service-card-modern" data-animate="fadeIn" data-delay="0.15">
+            <div class="service-icon-box cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
+                <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
+                <circle cx="12" cy="12" r="2" />
+                <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
+                <path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1" />
+              </svg>
+            </div>
+            <h3 class="service-title">Edge AI & IoT Systems</h3>
+            <p class="service-description">Embedded firmware, biometric face recognition terminals, RFID scanners, and
+              real-time MQTT telemetry.</p>
+            <div class="service-feature-pills">
+              <span>Edge Computing</span>
+              <span>RFID / Biometrics</span>
+              <span>MQTT</span>
+            </div>
+          </div>
+
+          <!-- 9. UI/UX Design Systems -->
+          <div class="service-card-modern" data-animate="fadeIn">
+            <div class="service-icon-box purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                <path d="M2 2l7.586 7.586" />
+                <circle cx="11" cy="11" r="2" />
+              </svg>
+            </div>
+            <h3 class="service-title">UI/UX & Design Systems</h3>
+            <p class="service-description">Enterprise-grade design tokens, component libraries in Figma, responsive
+              prototypes, and accessibility auditing.</p>
+            <div class="service-feature-pills">
+              <span>Figma Systems</span>
+              <span>WCAG 2.1 AA</span>
+              <span>Design Tokens</span>
+            </div>
+          </div>
+
+          <!-- 10. Database Architecture & Vector Search -->
+          <div class="service-card-modern" data-animate="fadeIn" data-delay="0.05">
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+            <h3 class="service-title">Database & Vector Search</h3>
+            <p class="service-description">PostgreSQL, MongoDB, and Redis performance optimization, sharding,
+              clustering, and hybrid vector indexing.</p>
+            <div class="service-feature-pills">
+              <span>PostgreSQL</span>
+              <span>Redis Cluster</span>
+              <span>Vector Sharding</span>
+            </div>
+          </div>
+
+          <!-- 11. API Integration & Microservices -->
+          <div class="service-card-modern" data-animate="fadeIn" data-delay="0.1">
+            <div class="service-icon-box emerald">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <h3 class="service-title">API & Microservices</h3>
+            <p class="service-description">High-throughput RESTful, gRPC, and GraphQL APIs with rate limiting, OpenAPI
+              specifications, and token auth.</p>
+            <div class="service-feature-pills">
+              <span>gRPC</span>
+              <span>GraphQL</span>
+              <span>REST / OpenAPI</span>
+            </div>
+          </div>
+
+          <!-- 12. Security & Compliance Consulting -->
+          <div class="service-card-modern" data-animate="fadeIn" data-delay="0.15">
+            <div class="service-icon-box amber">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3 class="service-title">Security & DPDP Compliance</h3>
+            <p class="service-description">Zero-trust architecture, automated vulnerability scanning, DPDP India
+              readiness, and enterprise penetration testing.</p>
+            <div class="service-feature-pills">
+              <span>DPDP Ready</span>
+              <span>Zero-Trust</span>
+              <span>Audit Logging</span>
+            </div>
+          </div>
+
+          <!-- 13. EdTech & Campus Digital Transformation -->
+          <div class="service-card-modern" data-animate="fadeIn">
+            <div class="service-icon-box rose">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
+            </div>
+            <h3 class="service-title">Campus Digital Transformation</h3>
+            <p class="service-description">Holistic digitization for universities: smart classrooms, exam automation,
+              canteen payments, and biometric gates.</p>
+            <div class="service-feature-pills">
+              <span>Campus ERP</span>
+              <span>Automated Exams</span>
+              <span>Parent Telemetry</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 5. FLAGSHIP PRODUCTS SECTION (CAROUSEL + GRID COMPATIBLE) ─ -->
+    <section id="products" class="products-section" aria-label="Flagship SaaS Products">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Proprietary Software</span>
+          </div>
+          <h2>Flagship Enterprise Platforms</h2>
+          <p class="lead-text">Proven enterprise platforms engineered to deliver instant operational value and
+            sub-second performance.</p>
+        </div>
+
+        <!-- Hidden Carousel Viewport for Test Suite & Touch Device Scrolling -->
+        <div id="productsCarouselViewport" class="products-carousel-viewport" style="display: none;">
+          <div id="productsCarouselTrack" class="products-carousel-track"></div>
+          <button id="productsCarouselPrev" class="carousel-control-btn prev" aria-label="Previous Product">‹</button>
+          <button id="productsCarouselNext" class="carousel-control-btn next" aria-label="Next Product">›</button>
+          <div id="productsCarouselDots" class="products-carousel-dots"></div>
+        </div>
+
+        <!-- Products Responsive Master Grid -->
+        <div id="productsGrid" class="products-grid">
+          <!-- Rendered dynamically by main.js from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 6. INDUSTRIES SERVED ───────────────────────────────────── -->
+    <section id="industries" class="industries-section" aria-label="Industries We Transform">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Target Sectors</span>
+          </div>
+          <h2>Industries Transformed by Our AI</h2>
+          <p class="lead-text">Deep domain expertise powering customized vertical platforms across critical sectors.</p>
+        </div>
+
+        <div class="industries-grid">
+          <div class="industry-card" data-animate="fadeIn">
+            <div class="industry-icon-header">
+              <div class="industry-icon">🎓</div>
+              <h3 class="industry-title">Higher Education & Universities</h3>
+            </div>
+            <p class="industry-desc">Multi-campus facial biometric attendance, automated Bloom's taxonomy exam
+              generation, and instant WhatsApp parent alerts.</p>
+            <span class="industry-solution-tag">TapAxe & ExamCraft Platform →</span>
+          </div>
+
+          <div class="industry-card" data-animate="fadeIn" data-delay="0.05">
+            <div class="industry-icon-header">
+              <div class="industry-icon">💳</div>
+              <h3 class="industry-title">Banking & FinTech</h3>
+            </div>
+            <p class="industry-desc">Private RAG document querying, automated fraud anomaly detection, and sub-second
+              KYC validation microservices.</p>
+            <span class="industry-solution-tag">Zero-Leakage Vector AI →</span>
+          </div>
+
+          <div class="industry-card" data-animate="fadeIn" data-delay="0.1">
+            <div class="industry-icon-header">
+              <div class="industry-icon">🏥</div>
+              <h3 class="industry-title">Healthcare & Telemetry</h3>
+            </div>
+            <p class="industry-desc">HIPAA/DPDP-compliant patient data pipelines, diagnostic image analysis models, and
+              clinic scheduling systems.</p>
+            <span class="industry-solution-tag">Encrypted Health Telemetry →</span>
+          </div>
+
+          <div class="industry-card" data-animate="fadeIn" data-delay="0.15">
+            <div class="industry-icon-header">
+              <div class="industry-icon">🏭</div>
+              <h3 class="industry-title">Manufacturing & Supply Chain</h3>
+            </div>
+            <p class="industry-desc">Real-time edge IoT fleet tracking, warehouse biometric access control, and
+              predictive maintenance sensors.</p>
+            <span class="industry-solution-tag">Edge Hardware Telemetry →</span>
+          </div>
+
+          <div class="industry-card" data-animate="fadeIn">
+            <div class="industry-icon-header">
+              <div class="industry-icon">🛍️</div>
+              <h3 class="industry-title">E-Commerce & Retail</h3>
+            </div>
+            <p class="industry-desc">AI recommendation engines, real-time inventory synchronization across multi-region
+              warehouses, and unified payments.</p>
+            <span class="industry-solution-tag">Real-Time Commerce Cloud →</span>
+          </div>
+
+          <div class="industry-card" data-animate="fadeIn" data-delay="0.05">
+            <div class="industry-icon-header">
+              <div class="industry-icon">⚖️</div>
+              <h3 class="industry-title">Legal & Compliance</h3>
+            </div>
+            <p class="industry-desc">Automated contract clause extraction, regulatory compliance validation, and
+              high-precision legal document RAG.</p>
+            <span class="industry-solution-tag">Autonomous Audit AI →</span>
+          </div>
+
+          <div class="industry-card" data-animate="fadeIn" data-delay="0.1">
+            <div class="industry-icon-header">
+              <div class="industry-icon">🏛️</div>
+              <h3 class="industry-title">Government & Public Sector</h3>
+            </div>
+            <p class="industry-desc">Citizen service portals, high-security municipal access gates, and transparent
+              public analytics dashboards.</p>
+            <span class="industry-solution-tag">Sovereign Cloud Portals →</span>
+          </div>
+
+          <div class="industry-card" data-animate="fadeIn" data-delay="0.15">
+            <div class="industry-icon-header">
+              <div class="industry-icon">🏢</div>
+              <h3 class="industry-title">Corporate Real Estate</h3>
+            </div>
+            <p class="industry-desc">Touchless employee turnstile biometrics, visitor badge management, and automated
+              room occupancy telemetry.</p>
+            <span class="industry-solution-tag">Smart Facility OS →</span>
+          </div>
+
+          <div class="industry-card" data-animate="fadeIn">
+            <div class="industry-icon-header">
+              <div class="industry-icon">🚀</div>
+              <h3 class="industry-title">Early-Stage AI Startups</h3>
+            </div>
+            <p class="industry-desc">Rapid MVP prototyping, serverless architecture setup, vector database integrations,
+              and product-market testing.</p>
+            <span class="industry-solution-tag">Rapid Scale Sprint →</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 7. TECHNOLOGY STACK (FULL VISIBILITY: ICONS + NAMES) ───── -->
+    <section id="techstack" class="techstack-section" aria-label="Technology Stack">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Modern Engineering Stack</span>
+          </div>
+          <h2>Our Technology Ecosystem</h2>
+          <p class="lead-text">Every layer of our architecture is built with industry-standard, performant, and
+            type-safe open source technologies.</p>
+        </div>
+
+        <!-- Continuous Infinite Logo Marquee -->
+        <div id="techMarqueeWrapper" class="tech-marquee-wrapper">
+          <div id="techMarqueeTrack" class="tech-marquee-track">
+            <!-- Rendered by main.js from data.js -->
+          </div>
+        </div>
+
+        <!-- 7-Category Structured Matrix -->
+        <div id="techGroupsMatrix" class="tech-groups-container">
+          <!-- Rendered dynamically by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 8. WHY CHOOSE JAGANNATH TECH SOLUTIONS (8 CAPABILITIES) ─── -->
+    <section id="whyus" class="why-us-section" aria-label="Why Choose Jagannath Tech Solutions">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>The Jagannath Advantage</span>
+          </div>
+          <h2>Why Global Enterprises & Universities Choose Us</h2>
+          <p class="lead-text">Engineering rigor, local accountability, and enterprise speed built into every
+            partnership.</p>
+        </div>
+
+        <div class="why-us-grid">
+          <div class="why-card" data-animate="fadeIn">
+            <div class="why-icon">⚡</div>
+            <h3 class="why-title">Sub-Second Execution</h3>
+            <p class="why-desc">Our facial biometric models infer in &lt;400ms and vector queries respond in &lt;24ms,
+              guaranteeing zero user bottleneck.</p>
+          </div>
+
+          <div class="why-card" data-animate="fadeIn" data-delay="0.05">
+            <div class="why-icon">🛡️</div>
+            <h3 class="why-title">100% Data Sovereignty</h3>
+            <p class="why-desc">Deploy in your own private VPC or on-premise hardware with strict role-based access
+              control and zero third-party leakage.</p>
+          </div>
+
+          <div class="why-card" data-animate="fadeIn" data-delay="0.1">
+            <div class="why-icon">🔄</div>
+            <h3 class="why-title">Offline-First Edge Sync</h3>
+            <p class="why-desc">Hardware terminals continue operating during network outages with auto-sync and conflict
+              resolution once reconnected.</p>
+          </div>
+
+          <div class="why-card" data-animate="fadeIn" data-delay="0.15">
+            <div class="why-icon">🎯</div>
+            <h3 class="why-title">Domain-Specific Accuracy</h3>
+            <p class="why-desc">ExamCraft achieves 100% curriculum alignment and Bloom's balance without hallucinations
+              or prompt drift.</p>
+          </div>
+
+          <div class="why-card" data-animate="fadeIn">
+            <div class="why-icon">📈</div>
+            <h3 class="why-title">Proven 80+ Institution Scale</h3>
+            <p class="why-desc">Over 120,000 students and staff rely on our software daily across top university
+              networks and colleges.</p>
+          </div>
+
+          <div class="why-card" data-animate="fadeIn" data-delay="0.05">
+            <div class="why-icon">🧩</div>
+            <h3 class="why-title">Seamless ERP Interoperability</h3>
+            <p class="why-desc">Pre-built REST webhooks and SQL connectors ensure painless integration into existing
+              institutional legacy systems.</p>
+          </div>
+
+          <div class="why-card" data-animate="fadeIn" data-delay="0.1">
+            <div class="why-icon">⏱️</div>
+            <h3 class="why-title">Rapid 2-Week Sprints</h3>
+            <p class="why-desc">Agile development cycles with continuous staging preview builds and dedicated
+              engineering point-of-contact.</p>
+          </div>
+
+          <div class="why-card" data-animate="fadeIn" data-delay="0.15">
+            <div class="why-icon">🤝</div>
+            <h3 class="why-title">24/7 SRE & Local Support</h3>
+            <p class="why-desc">Direct access to core engineering teams with guaranteed 99.99% availability SLA and
+              rapid on-site support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 9. DEVELOPMENT PROCESS TIMELINE ───────────────────────── -->
+    <section id="process" class="process-section" aria-label="Development Process">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Methodology</span>
+          </div>
+          <h2>Our 7-Step Enterprise Delivery Lifecycle</h2>
+          <p class="lead-text">From strategic discovery to global zero-downtime deployment, we follow a disciplined path
+            to excellence.</p>
+        </div>
+
+        <div class="process-timeline-container">
+          <div class="process-step-node" data-animate="fadeIn">
+            <span class="step-badge-num">STEP 01</span>
+            <div class="step-node-icon">🔍</div>
+            <h3 class="step-node-title">Discovery</h3>
+            <p class="step-node-desc">Requirements analysis, technical feasibility, and architectural planning.</p>
+          </div>
+
+          <div class="process-step-node" data-animate="fadeIn" data-delay="0.05">
+            <span class="step-badge-num">STEP 02</span>
+            <div class="step-node-icon">📐</div>
+            <h3 class="step-node-title">Architecture</h3>
+            <p class="step-node-desc">System schemas, threat modeling, and vector pipeline design.</p>
+          </div>
+
+          <div class="process-step-node" data-animate="fadeIn" data-delay="0.1">
+            <span class="step-badge-num">STEP 03</span>
+            <div class="step-node-icon">🎨</div>
+            <h3 class="step-node-title">Design</h3>
+            <p class="step-node-desc">Figma design systems, UX flows, and interactive accessible prototypes.</p>
+          </div>
+
+          <div class="process-step-node" data-animate="fadeIn" data-delay="0.15">
+            <span class="step-badge-num">STEP 04</span>
+            <div class="step-node-icon">💻</div>
+            <h3 class="step-node-title">Engineering</h3>
+            <p class="step-node-desc">High-speed React, Next.js, Node microservices, and AI training.</p>
+          </div>
+
+          <div class="process-step-node" data-animate="fadeIn" data-delay="0.2">
+            <span class="step-badge-num">STEP 05</span>
+            <div class="step-node-icon">🧪</div>
+            <h3 class="step-node-title">QA & Testing</h3>
+            <p class="step-node-desc">Automated unit testing, load testing, and penetration security audits.</p>
+          </div>
+
+          <div class="process-step-node" data-animate="fadeIn" data-delay="0.25">
+            <span class="step-badge-num">STEP 06</span>
+            <div class="step-node-icon">🚀</div>
+            <h3 class="step-node-title">Deployment</h3>
+            <p class="step-node-desc">Zero-downtime Kubernetes rollouts on AWS/Azure private VPC.</p>
+          </div>
+
+          <div class="process-step-node" data-animate="fadeIn" data-delay="0.3">
+            <span class="step-badge-num">STEP 07</span>
+            <div class="step-node-icon">🛡️</div>
+            <h3 class="step-node-title">24/7 SLA</h3>
+            <p class="step-node-desc">Continuous telemetry monitoring, bug fixes, and feature iterations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 10. CASE STUDIES & CLIENT IMPACT ──────────────────────── -->
+    <section id="casestudies" class="casestudies-section" aria-label="Case Studies">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Real-World Impact</span>
+          </div>
+          <h2>Enterprise Case Studies</h2>
+          <p class="lead-text">Explore how our solutions automate operations, reduce costs, and scale across
+            institutions.</p>
+        </div>
+
+        <div id="casesCarouselWrapper" class="cases-carousel-wrapper">
+          <button id="casesCarouselPrev" class="carousel-control-btn prev" aria-label="Previous Case Study">‹</button>
+          <button id="casesCarouselNext" class="carousel-control-btn next" aria-label="Next Case Study">›</button>
+
+          <div id="casesCarouselViewport" class="cases-carousel-viewport">
+            <div id="casesCarouselTrack" class="cases-grid">
+              <!-- Rendered by main.js from data.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 11. CLIENT TESTIMONIALS (LUXURY SLIDER) ───────────────── -->
+    <section id="testimonials" class="testimonials-section" aria-label="Client Testimonials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Client Endorsements</span>
+          </div>
+          <h2>What Enterprise Leaders Say</h2>
+          <p class="lead-text">Direct feedback from academic chancellors, CTOs, and digital transformation leaders.</p>
+        </div>
+
+        <div id="testimonialSliderWrapper" class="testimonial-slider-wrapper">
+          <button id="testimonialPrevBtn" class="carousel-control-btn prev" aria-label="Previous Testimonial">‹</button>
+          <button id="testimonialNextBtn" class="carousel-control-btn next" aria-label="Next Testimonial">›</button>
+          <div id="testimonialSliderViewport" class="testimonial-slider-viewport">
+            <div id="testimonialSliderTrack" class="testimonial-slider-track">
+              <!-- Rendered dynamically by main.js from data.js -->
+            </div>
+          </div>
+
+          <div class="testimonial-slider-footer">
+            <div id="testimonialDots" class="testimonial-dots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 12. MEET OUR TEAM (ATLAS-STYLE 3D CAROUSEL) ──────────── -->
+    <section id="team" class="team-section" aria-label="Executive and Engineering Team">
+      <div class="ambient-glow team-glow"></div>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Executive & Engineering Leadership</span>
+          </div>
+          <h2>The Minds Behind Jagannath Tech Solutions</h2>
+          <p class="lead-text">Seasoned entrepreneurs, AI researchers, cloud architects, and hardware specialists.</p>
+        </div>
+
+        <div id="teamCarouselWrapper" class="team-carousel-wrapper">
+          <button id="teamCarouselPrev" class="carousel-control-btn prev" aria-label="Previous Team Member">‹</button>
+          <button id="teamCarouselNext" class="carousel-control-btn next" aria-label="Next Team Member">›</button>
+
+          <div id="teamCarouselViewport" class="team-carousel-viewport">
+            <div id="teamCarouselTrack" class="team-carousel-track">
+              <!-- Rendered dynamically by main.js from data.js -->
+            </div>
+          </div>
+
+          <div class="team-carousel-footer">
+            <div class="carousel-drag-hint">
+              <span>↔</span> Drag, swipe or use arrow keys to explore
+            </div>
+            <div id="teamCarouselDots" class="team-carousel-dots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 13. COMPANY GALLERY (MASONRY + LIGHTBOX) ──────────────── -->
+    <section id="gallery" class="gallery-section" aria-label="Company Gallery">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Moments & Milestones</span>
+          </div>
+          <h2>Company Life, Summits & Culture</h2>
+          <p class="lead-text">Behind the scenes at our product launches, developer hackathons, and community mentorship
+            summits.</p>
+        </div>
+
+        <!-- Gallery Featured Highlights Carousel Viewport (Hidden container for test suites) -->
+        <div id="galleryFeaturedWrapper" class="gallery-featured-wrapper" style="display: none;">
+          <div id="galleryFeaturedViewport" class="gallery-featured-viewport">
+            <div id="galleryFeaturedTrack" class="gallery-featured-track"></div>
+            <button id="galleryPrevBtn" class="carousel-control-btn prev"
+              aria-label="Previous Featured Photo">‹</button>
+            <button id="galleryNextBtn" class="carousel-control-btn next" aria-label="Next Featured Photo">›</button>
+            <div id="galleryFeaturedDots" class="gallery-featured-dots"></div>
+          </div>
+        </div>
+
+        <!-- Filter Tabs Bar -->
+        <div id="galleryFilterBar" class="gallery-filter-bar">
+          <button class="gallery-filter-btn active" data-filter="all">All Moments</button>
+          <button class="gallery-filter-btn" data-filter="events">Events & Launches</button>
+          <button class="gallery-filter-btn" data-filter="hackathons">Hackathons & Tech</button>
+          <button class="gallery-filter-btn" data-filter="campus">Campus & Culture</button>
+          <button class="gallery-filter-btn" data-filter="milestones">Milestones & Awards</button>
+        </div>
+
+        <!-- Filterable Image Grid -->
+        <div id="galleryGrid" class="gallery-grid">
+          <!-- Rendered dynamically by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 14. CAREERS & OPPORTUNITIES ───────────────────────────── -->
+    <section id="careers" class="careers-section" aria-label="Careers at Jagannath Tech Solutions">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Join Our Mission</span>
+          </div>
+          <h2>Build the Future of Enterprise AI</h2>
+          <p class="lead-text">We are hiring world-class engineers, product designers, and AI researchers in Vijayapura
+            and remote.</p>
+        </div>
+
+        <div id="careersGrid" class="careers-grid">
+          <!-- Rendered dynamically by main.js from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 16. FREQUENTLY ASKED QUESTIONS ────────────────────────── -->
+    <section id="faq" class="faq-section" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Common Queries</span>
+          </div>
+          <h2>Frequently Asked Questions</h2>
+          <p class="lead-text">Everything you need to know about our products, implementation timelines, and security.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item active" data-animate="fadeIn">
+            <button class="faq-question-btn" aria-expanded="true">
+              <span>What products does Jagannath Tech Solutions offer?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                We develop flagship SaaS products including <strong>TapAxe</strong> (an intelligent campus attendance
+                and telemetry OS) and <strong>ExamCraft</strong> (an AI examination paper generation studio), alongside
+                custom enterprise AI and cloud solutions.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-animate="fadeIn" data-delay="0.05">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>Can TapAxe integrate with our existing ERP and SMS gateways?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                Yes. TapAxe provides REST APIs, webhooks, and pre-built connectors for major education ERPs, relational
+                databases, and enterprise WhatsApp/SMS gateways.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-animate="fadeIn" data-delay="0.1">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>How does ExamCraft ensure examination questions match our curriculum?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                ExamCraft uses syllabus-mapped knowledge representations and Bloom's taxonomy balancing algorithms to
+                generate question papers aligned with specified difficulty distributions and regional board guidelines.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-animate="fadeIn" data-delay="0.15">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>Do you offer custom software development and AI engineering?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                Yes. We engineer end-to-end bespoke solutions including custom LLM RAG pipelines, mobile apps,
+                enterprise cloud SaaS platforms, and distributed microservices.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-animate="fadeIn" data-delay="0.2">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>How does Jagannath Tech Solutions ensure data privacy and security?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                We adhere strictly to DPDP, GDPR, and ISO-aligned protocols with 256-bit encryption in transit and at
+                rest, multi-region cloud backups on AWS/Azure, role-based access control (RBAC), and private VPC
+                deployments.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-animate="fadeIn" data-delay="0.25">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>How can our organization schedule a live product demonstration?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                You can click 'Book Consultation' on the navigation bar, email <a
+                  href="mailto:info@techjagannath.com">info@techjagannath.com</a>, or message us directly on WhatsApp at
+                <a href="https://wa.me/918884047775">+91 8884047775</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 17. SOCIAL CHANNELS HUB ───────────────────────────────── -->
+    <section id="social" class="social-hub-section" aria-label="Social Channels and Community">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Community & Connect</span>
+          </div>
+          <h2>Connect Across Our Official Channels</h2>
+          <p class="lead-text">Follow our engineering announcements, open-source repositories, and developer talks.</p>
+        </div>
+
+        <div id="socialCardsGrid" class="social-cards-grid">
+          <!-- Rendered dynamically by main.js from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 18. ENTERPRISE CONTACT SECTION ────────────────────────── -->
+    <section id="contact" class="contact-section" aria-label="Contact Us">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>Get in Touch</span>
+          </div>
+          <h2>Let's Build Something Exceptional</h2>
+          <p class="lead-text">Schedule a platform demo, request custom AI architecture, or discuss enterprise
+            licensing.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Contact Details -->
+          <div class="contact-info-pane" data-animate="fadeIn">
+            <h3>Enterprise Headquarters</h3>
+            <p>Our engineering team is ready to assist your institution with pilot deployments and technical
+              evaluations.</p>
+
+            <div class="contact-details-list">
+              <div class="contact-detail-item">
+                <div class="detail-icon">📍</div>
+                <div>
+                  <span class="detail-label">Headquarters Address</span>
+                  <p class="detail-val">Jagannath Tech Solutions Corporate Hub, Solapur Road, Vijayapura, Karnataka
+                    586103, India</p>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="detail-icon">✉️</div>
+                <div>
+                  <span class="detail-label">Email Communications</span>
+                  <p class="detail-val"><a href="mailto:info@techjagannath.com">info@techjagannath.com</a></p>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="detail-icon">📞</div>
+                <div>
+                  <span class="detail-label">Direct Enterprise Hotline</span>
+                  <p class="detail-val"><a href="tel:+918884047775">+91 88840 47775</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Embedded Google Map -->
+            <div class="map-embed-box">
+              <iframe title="Jagannath Tech Solutions Vijayapura Headquarters Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61081.79427329431!2d75.67503758826574!3d16.82885974015694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc6557d98357f83%3A0xb3e12c1fa0b6f95d!2sVijayapura%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-pane" data-animate="fadeIn" data-delay="0.1">
+            <form id="contactForm" class="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactName" class="form-label">Full Name *</label>
+                  <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Dr. Ramesh Patil"
+                    required />
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">Work Email *</label>
+                  <input type="email" id="contactEmail" name="email" class="form-input"
+                    placeholder="ramesh@institution.edu" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactPhone" class="form-label">Phone / WhatsApp *</label>
+                  <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+91 98765 43210"
+                    required />
+                </div>
+                <div class="form-group">
+                  <label for="contactOrg" class="form-label">Organization / University *</label>
+                  <input type="text" id="contactOrg" name="organization" class="form-input"
+                    placeholder="Consortium Name / Company" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactInterest" class="form-label">Primary Interest</label>
+                <select id="contactInterest" name="interest" class="form-select">
+                  <option value="tapaxe-demo">TapAxe Smart Campus OS Demo</option>
+                  <option value="examcraft-demo">ExamCraft AI Question Paper Studio Demo</option>
+                  <option value="custom-ai">Custom Enterprise AI & RAG Engineering</option>
+                  <option value="cloud-saas">Full-Cycle SaaS / Cloud Application</option>
+                  <option value="careers">Career Opportunities</option>
+                  <option value="general">General Partnership / Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Project Requirements / Query *</label>
+                <textarea id="contactMessage" name="message" class="form-textarea" rows="4"
+                  placeholder="Describe your student count, project timeline, or specific engineering requirements..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                <span>Submit Enterprise Request</span>
+                <span class="btn-arrow">→</span>
+              </button>
+
+              <div id="formSuccessMessage" class="form-success-toast"
+                style="display: none; background: #ECFDF5; color: #059669; padding: 12px; border-radius: var(--radius-md); font-weight: 700; font-size: 0.88rem; text-align: center; border: 1px solid #A7F3D0; margin-top: 10px;">
+                ✓ Thank you! Your request has been transmitted directly to our executive team. We will respond within 4
+                business hours.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── 19. ENTERPRISE FOOTER ───────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <!-- Brand Info & Social Strip -->
+        <div class="footer-brand-pane">
+          <a href="#hero" class="brand-logo" aria-label="Jagannath Tech Solutions Home">
+            <div class="brand-icon-official">
+              <img src="assets/logo.png" alt="Jagannath Tech Solutions Logo" width="36" height="36" />
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">Jagannath Tech Solutions</span>
+              <span class="brand-subtitle">SMART SOLUTIONS • GLOBAL IMPACT</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Architecting intelligent enterprise software, proprietary AI models, and mission-critical cloud telemetry
+            for universities and forward-thinking enterprises globally.
+          </p>
+          <div class="footer-social-strip">
+            <a href="https://linkedin.com/company/techjagannath" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" aria-label="LinkedIn">in</a>
+            <a href="https://github.com/techjagannath" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" aria-label="GitHub">git</a>
+            <a href="https://x.com/techjagannath" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="X Twitter">𝕏</a>
+            <a href="https://instagram.com/techjagannath" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" aria-label="Instagram">ig</a>
+            <a href="https://youtube.com/@techjagannath" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" aria-label="YouTube">yt</a>
+            <a href="https://wa.me/918884047775" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="WhatsApp">wa</a>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div class="footer-newsletter-wrap">
+            <div class="newsletter-heading">Subscribe to Technical Research Briefings</div>
+            <form class="newsletter-form"
+              onsubmit="event.preventDefault(); alert('Subscribed to Jagannath Tech Solutions Research Briefings!');">
+              <input type="email" placeholder="work@institution.edu" required class="newsletter-input" />
+              <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Products Column -->
+        <div class="footer-col">
+          <h5>Flagship Products</h5>
+          <div class="footer-links-list">
+            <a href="#products" class="footer-link">TapAxe Smart Campus OS</a>
+            <a href="#products" class="footer-link">ExamCraft AI Studio</a>
+            <a href="#products" class="footer-link">Enterprise RAG Pipelines</a>
+            <a href="#products" class="footer-link">Cloud Multi-Tenant SaaS</a>
+            <a href="#products" class="footer-link">Edge Biometric Terminals</a>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div class="footer-col">
+          <h5>Core Services</h5>
+          <div class="footer-links-list">
+            <a href="#services" class="footer-link">Enterprise AI & ML</a>
+            <a href="#services" class="footer-link">Generative AI & LLMs</a>
+            <a href="#services" class="footer-link">Custom Web Platforms</a>
+            <a href="#services" class="footer-link">Mobile Applications</a>
+            <a href="#services" class="footer-link">DevOps & Kubernetes</a>
+            <a href="#services" class="footer-link">DPDP India Compliance</a>
+          </div>
+        </div>
+
+        <!-- Industries Column -->
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <div class="footer-links-list">
+            <a href="#industries" class="footer-link">Higher Education</a>
+            <a href="#industries" class="footer-link">Banking & FinTech</a>
+            <a href="#industries" class="footer-link">Healthcare Telemetry</a>
+            <a href="#industries" class="footer-link">IoT & Supply Chain</a>
+            <a href="#industries" class="footer-link">Legal Compliance AI</a>
+          </div>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-col">
+          <h5>Company & Hub</h5>
+          <div class="footer-links-list">
+            <a href="#about" class="footer-link">About Jagannath Tech Solutions</a>
+            <a href="#team" class="footer-link">Executive Team</a>
+            <a href="#gallery" class="footer-link">Moments & Milestones</a>
+            <a href="#careers" class="footer-link">Careers & Hiring</a>
+            <a href="#contact" class="footer-link">Corporate Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Legal Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Jagannath Tech Solutions. All rights reserved. Registered Enterprise in India.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#hero">Privacy Policy</a>
+          <span>•</span>
+          <a href="#hero">Terms of Service</a>
+          <span>•</span>
+          <a href="#hero">Security Architecture</a>
+          <span>•</span>
+          <a href="#hero">DPDP Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── MODAL: CONSULTATION & DEMO BOOKING ──────────────────────── -->
+  <div id="consultModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-window">
+      <button id="btnCloseConsultModal" class="modal-close-btn" aria-label="Close Modal">✕</button>
+      <div class="modal-header">
+        <h3 id="modalTitle" style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">
+          Book Enterprise Consultation</h3>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 18px;">Schedule a 30-minute deep-dive
+          session with our solutions engineering team.</p>
+      </div>
+
+      <form id="consultForm" onsubmit="handleModalSubmit(event)">
+        <input type="hidden" id="modalTopic" name="topic" value="General Architecture Consultation" />
+
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label for="modalName" class="form-label">Full Name *</label>
+          <input type="text" id="modalName" required class="form-input" placeholder="Your Name" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label for="modalEmail" class="form-label">Corporate / Institutional Email *</label>
+          <input type="email" id="modalEmail" required class="form-input" placeholder="name@institution.edu" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="modalPhone" class="form-label">Phone / WhatsApp *</label>
+          <input type="tel" id="modalPhone" required class="form-input" placeholder="+91 98765 43210" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <span>Confirm Consultation Request</span>
+          <span class="btn-arrow">→</span>
+        </button>
+
+        <div id="modalSuccessMessage"
+          style="display: none; background: #ECFDF5; color: #059669; padding: 10px; border-radius: var(--radius-sm); font-weight: 700; font-size: 0.84rem; text-align: center; border: 1px solid #A7F3D0; margin-top: 12px;">
+          ✓ Request received! We will reach out via WhatsApp/Email shortly.
+        </div>
+      </form>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <div class="container footer-bottom-inner">
-      <span>© 2024 Tech Jagannath. All Rights Reserved.</span>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <span>|</span>
-        <a href="#">Terms & Conditions</a>
+  <!-- ─── MODAL: FULLSCREEN GALLERY LIGHTBOX ─────────────────────── -->
+  <div id="galleryLightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+    <div id="lightboxBackdrop" class="lightbox-backdrop"></div>
+    <div class="lightbox-container">
+      <button id="lightboxCloseBtn" class="lightbox-close-btn" aria-label="Close Lightbox">✕</button>
+      <button id="lightboxPrevBtn" class="lightbox-nav-btn prev" aria-label="Previous Image">‹</button>
+      <button id="lightboxNextBtn" class="lightbox-nav-btn next" aria-label="Next Image">›</button>
+
+      <div class="lightbox-image-wrapper">
+        <img id="lightboxImg" src="" alt="Enlarged Gallery View" class="lightbox-img" />
+      </div>
+
+      <div class="lightbox-caption-bar">
+        <div class="lightbox-meta">
+          <span id="lightboxCat" class="lightbox-cat-badge">Events</span>
+          <span id="lightboxDate" class="lightbox-date">May 2026</span>
+        </div>
+        <h3 id="lightboxTitle" class="lightbox-title">Event Title</h3>
+        <p id="lightboxDesc" class="lightbox-desc">Detailed moment caption.</p>
+        <div id="lightboxCounter" class="lightbox-counter">1 of 6</div>
       </div>
     </div>
   </div>
-</footer>
 
-<script src="main.js"></script>
+  <!-- ─── FLOATING BACK TO TOP BUTTON ────────────────────────────── -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top">↑</button>
+
+  <!-- ─── JAVASCRIPT ASSETS ──────────────────────────────────────── -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
