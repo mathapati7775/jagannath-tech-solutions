@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initDataDrivenRendering();
   initPreloader();
   initNavbar();
+  initNeuralCanvas();
   initHeroSlider();
+  initHeroParallax();
   initMarquees();
   initProductsCarousel();
   initTeamCarousel();
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initConsultationModal();
   initBackToTop();
   initMagneticButtons();
+  init3DTiltEffect();
 });
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -1065,12 +1068,27 @@ function initPreloader() {
   const preloader = document.getElementById('preloader');
   if (!preloader) return;
 
-  window.addEventListener('load', () => {
+  const hidePreloader = () => {
+    preloader.classList.add('fade-out');
     setTimeout(() => {
-      preloader.classList.add('fade-out');
-      setTimeout(() => preloader.style.display = 'none', 500);
-    }, 250);
-  });
+      preloader.style.display = 'none';
+    }, 550);
+  };
+
+  // 2.2-second premium branded entrance
+  const startTime = Date.now();
+  const onReady = () => {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(2200 - elapsed, 500);
+    setTimeout(hidePreloader, remaining);
+  };
+
+  if (document.readyState === 'complete') {
+    onReady();
+  } else {
+    window.addEventListener('load', onReady);
+    setTimeout(hidePreloader, 2800);
+  }
 }
 
 function initNavbar() {
@@ -1238,23 +1256,60 @@ function closeConsultation() {
   document.body.style.overflow = '';
 }
 
-function handleModalSubmit(e) {
+async function handleModalSubmit(e) {
   e.preventDefault();
+  const name = document.getElementById('modalName')?.value || '';
+  const email = document.getElementById('modalEmail')?.value || '';
+  const phone = document.getElementById('modalPhone')?.value || '';
+  const topic = document.getElementById('modalTopic')?.value || 'General Architecture Consultation';
+
+  try {
+    const res = await fetch('/api/consultation', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, phone, topic })
+    });
+    const result = await res.json();
+    console.log('[Consultation Submitted]', result);
+  } catch (err) {
+    console.warn('[Consultation Offline Mode]', err);
+  }
+
   const successMsg = document.getElementById('modalSuccessMessage');
   if (successMsg) successMsg.style.display = 'block';
   setTimeout(() => {
     closeConsultation();
+    const form = document.getElementById('consultForm');
+    if (form) form.reset();
     if (successMsg) successMsg.style.display = 'none';
   }, 2200);
 }
 
-function handleContactSubmit(e) {
+async function handleContactSubmit(e) {
   e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const formData = form ? new FormData(form) : null;
+  const payload = {};
+  if (formData) {
+    formData.forEach((value, key) => { payload[key] = value; });
+  }
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const result = await res.json();
+    console.log('[Inquiry Submitted]', result);
+  } catch (err) {
+    console.warn('[Inquiry Offline Mode]', err);
+  }
+
   const successMsg = document.getElementById('formSuccessMessage');
   if (successMsg) {
     successMsg.style.display = 'block';
     setTimeout(() => {
-      const form = document.getElementById('contactForm');
       if (form) form.reset();
       successMsg.style.display = 'none';
     }, 4000);
@@ -1288,6 +1343,158 @@ function initMagneticButtons() {
       btn.style.transform = '';
     });
   });
+}
+
+function init3DTiltEffect() {
+  const tiltCards = document.querySelectorAll('.product-3d-card, .service-card-modern, .hero-dashboard-card, .case-carousel-card, .case-grid-card, .why-card, .stat-achievement-card');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+function initHeroParallax() {
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / 35;
+    const y = (e.clientY - rect.top - rect.height / 2) / 35;
+
+    const glow1 = hero.querySelector('.glow-1');
+    const glow2 = hero.querySelector('.glow-2');
+    if (glow1) glow1.style.transform = `translate(${x * 1.5}px, ${y * 1.5}px)`;
+    if (glow2) glow2.style.transform = `translate(${-x * 1.2}px, ${-y * 1.2}px)`;
+  });
+}
+
+function initNeuralCanvas() {
+  let canvas = document.getElementById('neuralCanvas');
+  if (!canvas) {
+    canvas = document.createElement('canvas');
+    canvas.id = 'neuralCanvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '0';
+    canvas.style.opacity = '0.7';
+    document.body.insertBefore(canvas, document.body.firstChild);
+  }
+
+  const ctx = canvas.getContext('2d');
+  let width, height;
+  let particles = [];
+  const particleCount = window.innerWidth < 768 ? 28 : 55;
+
+  const resize = () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  };
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  const mouse = { x: null, y: null, radius: 140 };
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+  window.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 0.7;
+      this.vy = (Math.random() - 0.5) * 0.7;
+      this.radius = Math.random() * 2 + 1.2;
+      this.color = Math.random() > 0.4 ? 'rgba(0, 240, 255, ' : 'rgba(168, 85, 247, ';
+      this.alpha = Math.random() * 0.6 + 0.3;
+    }
+
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < 0 || this.x > width) this.vx *= -1;
+      if (this.y < 0 || this.y > height) this.vy *= -1;
+
+      // Mouse repulsion/attraction
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouse.radius) {
+          const force = (mouse.radius - dist) / mouse.radius;
+          this.x -= dx * force * 0.03;
+          this.y -= dy * force * 0.03;
+        }
+      }
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color + this.alpha + ')';
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = this.color + '0.8)';
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+  }
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  const animate = () => {
+    ctx.clearRect(0, 0, width, height);
+
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 130) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          const opacity = (1 - dist / 130) * 0.25;
+          ctx.strokeStyle = `rgba(0, 240, 255, ${opacity})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(animate);
+  };
+
+  animate();
 }
 
 // Global scope attachment for inline handlers

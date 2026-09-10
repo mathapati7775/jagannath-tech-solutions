@@ -1,0 +1,20 @@
+{
+  "name": "tech-jagannath-website",
+  "version": "2.0.0",
+  "description": "Jagannath Tech Solutions - Official Enterprise AI, TapAxe, and ExamCraft Web Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "python deep_verify_all.py"
+  },
+  "keywords": [
+    "enterprise-ai",
+    "tapaxe",
+    "examcraft",
+    "tech-jagannath",
+    "saas"
+  ],
+  "author": "Jagannath Tech Solutions",
+  "license": "ISC"
+}
