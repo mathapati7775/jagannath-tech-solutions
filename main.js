@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initCentralContactLinks();
   initDataDrivenRendering();
   initPreloader();
   initNavbar();
@@ -1218,14 +1219,73 @@ function initFaqAccordion() {
   });
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   20. CENTRAL CONTACT LINKS & DYNAMIC BINDING
+   ═══════════════════════════════════════════════════════════════════ */
+function initCentralContactLinks() {
+  if (typeof COMPANY_CONTACT === 'undefined') return;
+
+  // 1. Centralized WhatsApp links
+  const waLinks = document.querySelectorAll('a[href*="wa.me"], a.footer-social-btn[aria-label="WhatsApp"], a[data-contact="whatsapp"]');
+  waLinks.forEach(link => {
+    link.href = typeof getWhatsAppUrl === 'function' ? getWhatsAppUrl() : `https://wa.me/${COMPANY_CONTACT.whatsapp}?text=${encodeURIComponent(COMPANY_CONTACT.whatsappText)}`;
+  });
+
+  // 2. Centralized Email links
+  const emailLinks = document.querySelectorAll('a[href^="mailto:"], a[data-contact="email"]');
+  emailLinks.forEach(link => {
+    const defaultSubject = COMPANY_CONTACT.emailSubject || 'Website Inquiry - Jagannath Tech Solutions';
+    link.href = typeof getMailtoUrl === 'function' ? getMailtoUrl() : `mailto:${COMPANY_CONTACT.email}?subject=${encodeURIComponent(defaultSubject)}`;
+    if (link.textContent.trim() === 'info@techjagannath.com' || link.hasAttribute('data-contact-text')) {
+      link.textContent = COMPANY_CONTACT.email;
+    }
+  });
+
+  // 3. Centralized Phone links
+  const phoneLinks = document.querySelectorAll('a[href^="tel:"], a[data-contact="phone"]');
+  phoneLinks.forEach(link => {
+    link.href = typeof getTelUrl === 'function' ? getTelUrl() : `tel:${COMPANY_CONTACT.phone}`;
+    if (link.textContent.trim().startsWith('+91') || link.hasAttribute('data-contact-text')) {
+      link.textContent = COMPANY_CONTACT.displayPhone || COMPANY_CONTACT.phone;
+    }
+  });
+}
+
+/* ─── Validation Helpers ─────────────────────────────────────────── */
+function isValidEmail(email) {
+  const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+  return re.test(String(email).trim());
+}
+
+function isValidPhone(phone) {
+  if (!phone) return false;
+  const digits = String(phone).replace(/\D/g, '');
+  return digits.length >= 7 && digits.length <= 15;
+}
+
+function showFormError(element, message) {
+  if (!element) {
+    alert(message);
+    return;
+  }
+  element.textContent = '⚠️ ' + message;
+  element.style.display = 'block';
+}
+
+/* ─── Consultation & Book Demo Modal Controller ─────────────────── */
 function initConsultationModal() {
   const modal = document.getElementById('consultModal');
-  const btnOpen = document.getElementById('btnOpenConsultModal');
+  const btnOpens = document.querySelectorAll('#btnOpenConsultModal, .btn-open-consult-modal, [data-open-modal="consult"]');
   const btnClose = document.getElementById('btnCloseConsultModal');
 
-  if (btnOpen && modal) {
-    btnOpen.addEventListener('click', () => openConsultation());
-  }
+  btnOpens.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const customTopic = btn.getAttribute('data-topic') || 'General Architecture Consultation';
+      openConsultation(customTopic);
+    });
+  });
+
   if (btnClose && modal) {
     btnClose.addEventListener('click', () => closeConsultation());
   }
@@ -1235,18 +1295,52 @@ function initConsultationModal() {
       if (e.target === modal) closeConsultation();
     });
   }
+
+  // Keyboard accessibility: Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      closeConsultation();
+    }
+  });
 }
 
 function openConsultation(topic) {
   const modal = document.getElementById('consultModal');
   const topicInput = document.getElementById('modalTopic');
+  const errBox = document.getElementById('modalErrorMessage');
+  const succBox = document.getElementById('modalSuccessMessage');
   if (!modal) return;
 
+  if (errBox) errBox.style.display = 'none';
+  if (succBox) succBox.style.display = 'none';
+
   if (topicInput && topic) {
-    topicInput.value = topic;
+    if (topicInput.tagName === 'SELECT') {
+      let matched = false;
+      for (let i = 0; i < topicInput.options.length; i++) {
+        if (topicInput.options[i].value.toLowerCase().includes(topic.toLowerCase()) || 
+            topic.toLowerCase().includes(topicInput.options[i].value.toLowerCase())) {
+          topicInput.selectedIndex = i;
+          matched = true;
+          break;
+        }
+      }
+      if (!matched) {
+        const newOpt = new Option(topic, topic, true, true);
+        topicInput.add(newOpt);
+      }
+    } else {
+      topicInput.value = topic;
+    }
   }
+
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+
+  setTimeout(() => {
+    const firstInput = document.getElementById('modalName');
+    if (firstInput) firstInput.focus();
+  }, 120);
 }
 
 function closeConsultation() {
@@ -1256,43 +1350,174 @@ function closeConsultation() {
   document.body.style.overflow = '';
 }
 
+/* ─── Modal Form Submission (Book Demo) ─────────────────────────── */
+let isModalSubmitting = false;
+
 async function handleModalSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById('modalName')?.value || '';
-  const email = document.getElementById('modalEmail')?.value || '';
-  const phone = document.getElementById('modalPhone')?.value || '';
-  const topic = document.getElementById('modalTopic')?.value || 'General Architecture Consultation';
+  if (isModalSubmitting) return;
+
+  const form = document.getElementById('consultForm');
+  const submitBtn = document.getElementById('modalSubmitBtn') || form?.querySelector('button[type="submit"]');
+  const successMsg = document.getElementById('modalSuccessMessage');
+  const errorMsg = document.getElementById('modalErrorMessage');
+
+  if (errorMsg) errorMsg.style.display = 'none';
+  if (successMsg) successMsg.style.display = 'none';
+
+  const name = document.getElementById('modalName')?.value.trim() || '';
+  const organization = document.getElementById('modalOrg')?.value.trim() || '';
+  const email = document.getElementById('modalEmail')?.value.trim() || '';
+  const phone = document.getElementById('modalPhone')?.value.trim() || '';
+  const topic = document.getElementById('modalTopic')?.value.trim() || 'General Architecture Consultation';
+  const demoDate = document.getElementById('modalDate')?.value || '';
+  const demoTime = document.getElementById('modalTime')?.value || '';
+  const message = document.getElementById('modalMessage')?.value.trim() || '';
+
+  // 1. Validation
+  if (!name) {
+    showFormError(errorMsg, 'Please enter your Full Name.');
+    document.getElementById('modalName')?.focus();
+    return;
+  }
+  if (!email || !isValidEmail(email)) {
+    showFormError(errorMsg, 'Please enter a valid work or institutional email address.');
+    document.getElementById('modalEmail')?.focus();
+    return;
+  }
+  if (!phone || !isValidPhone(phone)) {
+    showFormError(errorMsg, 'Please enter a valid Phone / WhatsApp number (min 7 digits).');
+    document.getElementById('modalPhone')?.focus();
+    return;
+  }
+
+  // 2. Loading state & anti-duplicate lock
+  isModalSubmitting = true;
+  let origBtnContent = '';
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    origBtnContent = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span class="btn-text">Transmitting Demo Request...</span>';
+    submitBtn.style.opacity = '0.75';
+    submitBtn.style.cursor = 'not-allowed';
+  }
+
+  const payload = {
+    name,
+    organization,
+    email,
+    phone,
+    topic,
+    demoDate,
+    demoTime,
+    message,
+    source: 'Book Demo Modal',
+    submittedAt: new Date().toISOString()
+  };
 
   try {
     const res = await fetch('/api/consultation', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, phone, topic })
+      body: JSON.stringify(payload)
     });
-    const result = await res.json();
-    console.log('[Consultation Submitted]', result);
-  } catch (err) {
-    console.warn('[Consultation Offline Mode]', err);
-  }
 
-  const successMsg = document.getElementById('modalSuccessMessage');
-  if (successMsg) successMsg.style.display = 'block';
-  setTimeout(() => {
-    closeConsultation();
-    const form = document.getElementById('consultForm');
-    if (form) form.reset();
-    if (successMsg) successMsg.style.display = 'none';
-  }, 2200);
+    const result = await res.json().catch(() => ({}));
+
+    if (res.ok && result.success) {
+      if (successMsg) {
+        successMsg.textContent = result.message || '✓ Demo request received! Our engineering team will contact you shortly to confirm your scheduled slot.';
+        successMsg.style.display = 'block';
+      }
+      if (form) form.reset();
+
+      setTimeout(() => {
+        closeConsultation();
+        if (successMsg) successMsg.style.display = 'none';
+      }, 2600);
+    } else {
+      throw new Error(result.error || result.message || 'Unable to send your request right now. Please try again or contact us directly.');
+    }
+  } catch (err) {
+    console.error('[Demo Request Error]', err);
+    showFormError(errorMsg, err.message || 'Unable to send your request right now. Please try again or contact us directly.');
+  } finally {
+    isModalSubmitting = false;
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = origBtnContent || '<span class="btn-text">Schedule Live Demo</span> <span class="btn-arrow">→</span>';
+      submitBtn.style.opacity = '';
+      submitBtn.style.cursor = '';
+    }
+  }
 }
+
+/* ─── Contact Form Submission ────────────────────────────────────── */
+let isContactSubmitting = false;
 
 async function handleContactSubmit(e) {
   e.preventDefault();
+  if (isContactSubmitting) return;
+
   const form = document.getElementById('contactForm');
-  const formData = form ? new FormData(form) : null;
-  const payload = {};
-  if (formData) {
-    formData.forEach((value, key) => { payload[key] = value; });
+  const submitBtn = document.getElementById('contactSubmitBtn') || form?.querySelector('button[type="submit"]');
+  const successMsg = document.getElementById('formSuccessMessage');
+  const errorMsg = document.getElementById('formErrorMessage');
+
+  if (errorMsg) errorMsg.style.display = 'none';
+  if (successMsg) successMsg.style.display = 'none';
+
+  const name = document.getElementById('contactName')?.value.trim() || '';
+  const email = document.getElementById('contactEmail')?.value.trim() || '';
+  const phone = document.getElementById('contactPhone')?.value.trim() || '';
+  const organization = document.getElementById('contactOrg')?.value.trim() || '';
+  const subject = document.getElementById('contactInterest')?.value || 'General Inquiry';
+  const message = document.getElementById('contactMessage')?.value.trim() || '';
+
+  // 1. Validation
+  if (!name) {
+    showFormError(errorMsg, 'Please enter your Full Name.');
+    document.getElementById('contactName')?.focus();
+    return;
   }
+  if (!email || !isValidEmail(email)) {
+    showFormError(errorMsg, 'Please enter a valid work email address.');
+    document.getElementById('contactEmail')?.focus();
+    return;
+  }
+  if (phone && !isValidPhone(phone)) {
+    showFormError(errorMsg, 'Please enter a valid Phone / WhatsApp number (min 7 digits).');
+    document.getElementById('contactPhone')?.focus();
+    return;
+  }
+  if (!message || message.length < 5) {
+    showFormError(errorMsg, 'Please enter your project requirements or query (at least 5 characters).');
+    document.getElementById('contactMessage')?.focus();
+    return;
+  }
+
+  // 2. Loading state & anti-duplicate lock
+  isContactSubmitting = true;
+  let origBtnContent = '';
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    origBtnContent = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span class="btn-text">Submitting Request...</span>';
+    submitBtn.style.opacity = '0.75';
+    submitBtn.style.cursor = 'not-allowed';
+  }
+
+  const payload = {
+    name,
+    email,
+    phone: phone || 'N/A',
+    organization: organization || 'N/A',
+    subject,
+    service: subject,
+    message,
+    source: 'Website Contact Form',
+    submittedAt: new Date().toISOString()
+  };
 
   try {
     const res = await fetch('/api/contact', {
@@ -1300,19 +1525,32 @@ async function handleContactSubmit(e) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
-    const result = await res.json();
-    console.log('[Inquiry Submitted]', result);
-  } catch (err) {
-    console.warn('[Inquiry Offline Mode]', err);
-  }
 
-  const successMsg = document.getElementById('formSuccessMessage');
-  if (successMsg) {
-    successMsg.style.display = 'block';
-    setTimeout(() => {
+    const result = await res.json().catch(() => ({}));
+
+    if (res.ok && result.success) {
+      if (successMsg) {
+        successMsg.textContent = result.message || '✓ Thank you! Your request has been transmitted directly to our executive team. We will respond within 4 business hours.';
+        successMsg.style.display = 'block';
+      }
       if (form) form.reset();
-      successMsg.style.display = 'none';
-    }, 4000);
+      setTimeout(() => {
+        if (successMsg) successMsg.style.display = 'none';
+      }, 5000);
+    } else {
+      throw new Error(result.error || result.message || 'Unable to send your request right now. Please try again or contact us directly.');
+    }
+  } catch (err) {
+    console.error('[Contact Form Error]', err);
+    showFormError(errorMsg, err.message || 'Unable to send your request right now. Please try again or contact us directly.');
+  } finally {
+    isContactSubmitting = false;
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = origBtnContent || '<span class="btn-text">Submit Enterprise Request</span> <span class="btn-arrow">→</span>';
+      submitBtn.style.opacity = '';
+      submitBtn.style.cursor = '';
+    }
   }
 }
 

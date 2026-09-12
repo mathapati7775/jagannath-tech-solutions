@@ -145,7 +145,7 @@
           <a href="https://instagram.com/techjagannath" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">ig</a>
           <a href="https://facebook.com/techjagannath" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook">fb</a>
           <a href="https://youtube.com/@techjagannath" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">yt</a>
-          <a href="https://wa.me/918884047775" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp">wa</a>
+          <a href="https://wa.me/918884047775?text=Hello%20Jagannath%20Tech%20Solutions%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp">wa</a>
           <a href="https://t.me/techjagannath" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Telegram">tg</a>
         </div>
       </div>
@@ -188,8 +188,8 @@
         <h5>Contact</h5>
         <div class="footer-links-list">
           <span class="footer-link">Vijayapura, Karnataka, India</span>
-          <a href="mailto:info@techjagannath.com" class="footer-link">info@techjagannath.com</a>
-          <a href="tel:+918884047775" class="footer-link">+91 8884047775</a>
+          <a href="mailto:info@techjagannath.com?subject=Website%20Inquiry%20-%20Jagannath%20Tech%20Solutions" class="footer-link">info@techjagannath.com</a>
+          <a href="tel:+918884047775" class="footer-link">+91 88840 47775</a>
         </div>
       </div>
     </div>
@@ -206,33 +206,84 @@
     </div>
   </footer>
 
-  <!-- Consultation Modal -->
+  <!-- Consultation & Demo Modal -->
   <div class="modal-backdrop" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-window">
       <button class="modal-close-btn" id="btnCloseConsultModal" aria-label="Close dialog">✕</button>
-      <h3 id="modalTitle" style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">Schedule Consultation</h3>
-      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 18px;">Connect directly with senior architects to evaluate your institutional requirements.</p>
-      <form onsubmit="handleModalSubmit(event)">
-        <div class="form-group" style="margin-bottom: 12px;">
-          <label class="form-label">Full Name</label>
-          <input type="text" class="form-input" placeholder="e.g. Dr. Rajesh Kumar" required />
+      <div class="modal-header">
+        <h3 id="modalTitle" style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">Book a Live Product Demo</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 18px;">Schedule an interactive demonstration and technical evaluation with our solutions team.</p>
+      </div>
+
+      <form id="consultForm" onsubmit="handleModalSubmit(event)" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modalName" class="form-label">Full Name *</label>
+            <input type="text" id="modalName" name="name" required class="form-input" placeholder="e.g. Dr. Rajesh Kumar" />
+          </div>
+          <div class="form-group">
+            <label for="modalOrg" class="form-label">Company / School / Organization</label>
+            <input type="text" id="modalOrg" name="organization" class="form-input" placeholder="e.g. University / Enterprise" />
+          </div>
         </div>
-        <div class="form-group" style="margin-bottom: 12px;">
-          <label class="form-label">Work Email</label>
-          <input type="email" class="form-input" placeholder="rajesh@institution.edu" required />
+
+        <div class="form-row" style="margin-top: 12px;">
+          <div class="form-group">
+            <label for="modalEmail" class="form-label">Work Email *</label>
+            <input type="email" id="modalEmail" name="email" required class="form-input" placeholder="name@institution.edu" />
+          </div>
+          <div class="form-group">
+            <label for="modalPhone" class="form-label">Phone / WhatsApp Number *</label>
+            <input type="tel" id="modalPhone" name="phone" required class="form-input" placeholder="+91 98765 43210" />
+          </div>
         </div>
-        <div class="form-group" style="margin-bottom: 18px;">
-          <label class="form-label">Subject / Product Interest</label>
-          <input type="text" class="form-input" id="modalTopic" value="TapAxe & ExamCraft Platform Demo" required />
+
+        <div class="form-group" style="margin-top: 12px;">
+          <label for="modalTopic" class="form-label">Product / Service Interested In</label>
+          <select id="modalTopic" name="topic" class="form-select">
+            <option value="TapAxe Smart Campus OS Demo">TapAxe Smart Campus OS Demo</option>
+            <option value="ExamCraft AI Question Paper Studio Demo">ExamCraft AI Question Paper Studio Demo</option>
+            <option value="Custom Enterprise AI & RAG Engineering">Custom Enterprise AI &amp; RAG Engineering</option>
+            <option value="Full-Cycle SaaS / Cloud Application">Full-Cycle SaaS / Cloud Application</option>
+            <option value="General Architecture Consultation">General Architecture Consultation</option>
+          </select>
         </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">
-          <span>Confirm Consultation Request</span>
+
+        <div class="form-row" style="margin-top: 12px;">
+          <div class="form-group">
+            <label for="modalDate" class="form-label">Preferred Demo Date</label>
+            <input type="date" id="modalDate" name="demoDate" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label for="modalTime" class="form-label">Preferred Demo Time</label>
+            <select id="modalTime" name="demoTime" class="form-select">
+              <option value="Morning (10:00 AM - 1:00 PM IST)">Morning (10:00 AM - 1:00 PM IST)</option>
+              <option value="Afternoon (2:00 PM - 5:00 PM IST)">Afternoon (2:00 PM - 5:00 PM IST)</option>
+              <option value="Evening (5:00 PM - 8:00 PM IST)">Evening (5:00 PM - 8:00 PM IST)</option>
+              <option value="Flexible / Any Time">Flexible / Any Time</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 12px; margin-bottom: 16px;">
+          <label for="modalMessage" class="form-label">Message / Requirements</label>
+          <textarea id="modalMessage" name="message" class="form-textarea" rows="3" placeholder="Specify user volume, key questions, or specific deployment goals..."></textarea>
+        </div>
+
+        <button type="submit" id="modalSubmitBtn" class="btn btn-primary" style="width: 100%;">
+          <span class="btn-text">Schedule Live Demo</span>
           <span class="btn-arrow">→</span>
         </button>
+
+        <div id="modalSuccessMessage"
+          style="display: none; background: #ECFDF5; color: #059669; padding: 12px; border-radius: var(--radius-sm); font-weight: 700; font-size: 0.86rem; text-align: center; border: 1px solid #A7F3D0; margin-top: 12px;">
+          ✓ Demo request received! Our engineering team will contact you shortly to confirm your scheduled slot.
+        </div>
+
+        <div id="modalErrorMessage"
+          style="display: none; background: #FEF2F2; color: #DC2626; padding: 12px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.86rem; text-align: center; border: 1px solid #FECACA; margin-top: 12px;">
+        </div>
       </form>
-      <div id="modalSuccessMessage" style="display: none; margin-top: 14px; padding: 10px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 8px; color: #065F46; font-size: 0.84rem; text-align: center;">
-        ✓ Request received! Our team will contact you within 24 hours.
-      </div>
     </div>
   </div>
 

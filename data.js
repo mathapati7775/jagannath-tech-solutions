@@ -4,6 +4,32 @@
  * team, gallery, testimonials, case studies, channels, careers, and FAQs.
  */
 
+// ─── CENTRAL COMPANY CONTACT CONFIGURATION ───────────────────────────
+const COMPANY_CONTACT = {
+  email: "info@techjagannath.com",
+  phone: "+918884047775",
+  displayPhone: "+91 88840 47775",
+  whatsapp: "918884047775",
+  whatsappText: "Hello Jagannath Tech Solutions, I would like to know more about your services.",
+  emailSubject: "Website Inquiry - Jagannath Tech Solutions",
+  address: "Jagannath Tech Solutions Corporate Hub, Solapur Road, Vijayapura, Karnataka 586103, India",
+  websiteUrl: "https://techjagannath.com"
+};
+
+function getWhatsAppUrl(customText) {
+  const msg = customText || COMPANY_CONTACT.whatsappText;
+  return `https://wa.me/${COMPANY_CONTACT.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
+
+function getMailtoUrl(customSubject) {
+  const subj = customSubject || COMPANY_CONTACT.emailSubject;
+  return `mailto:${COMPANY_CONTACT.email}?subject=${encodeURIComponent(subj)}`;
+}
+
+function getTelUrl() {
+  return `tel:${COMPANY_CONTACT.phone}`;
+}
+
 const TechJagannathData = {
   // ─── 0. HERO INTERACTIVE SLIDES ──────────────────────────────────
   heroSlides: [
@@ -692,9 +718,9 @@ const TechJagannathData = {
     },
     {
       name: "WhatsApp",
-      handle: "+91 8884047775",
+      handle: COMPANY_CONTACT.displayPhone,
       role: "Enterprise Sales",
-      url: "https://wa.me/918884047775",
+      url: getWhatsAppUrl(),
       color: "#25D366",
       iconSvg: `<svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.2 1.31-1.68 1.37-.47.06-.98.24-3.13-.65-2.28-.95-3.76-3.25-3.87-3.4-.11-.15-.93-1.24-.93-2.37 0-1.12.59-1.68.8-1.91.21-.24.46-.3.61-.3.15 0 .31 0 .44.01.14.01.32-.05.5.38.18.43.62 1.51.68 1.62.06.11.1.24.02.39-.08.15-.12.24-.24.38-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.17.59-.69.75-.93.16-.24.32-.2.54-.12.22.08 1.39.66 1.63.78.24.12.4.18.46.28.06.1.06.58-.18 1.26z"/></svg>`
     },
@@ -772,16 +798,26 @@ const TechJagannathData = {
     },
     {
       question: "How can our organization schedule a live product demonstration?",
-      answer: "You can click 'Book Consultation' on the navigation bar, email info@techjagannath.com, or message us directly on WhatsApp at +91 8884047775."
+      answer: `You can click 'Book Consultation' on the navigation bar, email ${COMPANY_CONTACT.email}, or message us directly on WhatsApp at ${COMPANY_CONTACT.displayPhone}.`
     }
   ]
 };
 
 // Export globally for browser & Node.js environments
 if (typeof window !== 'undefined') {
+  window.COMPANY_CONTACT = COMPANY_CONTACT;
+  window.getWhatsAppUrl = getWhatsAppUrl;
+  window.getMailtoUrl = getMailtoUrl;
+  window.getTelUrl = getTelUrl;
   window.JagannathTechData = TechJagannathData;
   window.TechJagannathData = TechJagannathData;
 }
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = TechJagannathData;
+  module.exports = {
+    COMPANY_CONTACT,
+    getWhatsAppUrl,
+    getMailtoUrl,
+    getTelUrl,
+    TechJagannathData
+  };
 }
