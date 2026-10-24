@@ -1,0 +1,16 @@
+{
+  "name": "tech-jagannath-api-lambda",
+  "version": "1.0.0",
+  "description": "Serverless API Handler for Jagannath Tech Solutions (Book Demo & Contact Us SES Delivery)",
+  "main": "api-handler.js",
+  "scripts": {
+    "test": "node test-handler.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.500.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "ISC"
+}

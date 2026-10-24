@@ -1,5 +1,29 @@
 [
   {
+    "id": "INQ-MTY2REEW",
+    "name": "Sarah Jenkins",
+    "email": "sarah.j@globaltech.com",
+    "phone": "+91 99887 76655",
+    "organization": "Global Tech Innovations",
+    "subject": "Custom Enterprise AI & RAG Engineering",
+    "message": "We would like to consult on architecting a custom LLM RAG pipeline on AWS.",
+    "clientIp": "::1",
+    "createdAt": "2026-09-12T07:39:45.464Z",
+    "status": "CONFIRMED_DISPATCHED"
+  },
+  {
+    "id": "INQ-MTY2R50I",
+    "name": "Mr. Vinay Kulkarni",
+    "email": "vinay_1789198772@enterprise-solutions.com",
+    "phone": "+91 98860 54321",
+    "organization": "Enterprise AI Labs",
+    "subject": "Enterprise Cloud Migration",
+    "message": "We need consulting on multi-cloud AWS RAG system architecture.",
+    "clientIp": "::1",
+    "createdAt": "2026-09-12T07:39:33.282Z",
+    "status": "CONFIRMED_DISPATCHED"
+  },
+  {
     "id": "INQ-MTY20OIJ",
     "name": "Mr. Vinay Kulkarni",
     "email": "vinay_1789197536@enterprise-solutions.com",
