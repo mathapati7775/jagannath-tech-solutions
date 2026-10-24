@@ -208,15 +208,12 @@ ${message ? message.trim() : '(No extra notes provided)'}
       const client = customSesClient || sesClient;
       await client.send(new SendEmailCommand(sendParams));
 
-      console.log(`[SES SUCCESS] Demo request ${bookingId} delivered to ${RECEIVER_EMAIL}`);
-
       return buildResponse(201, {
         success: true,
         message: 'Demo request received! Our engineering team will contact you shortly to confirm your scheduled slot.',
         bookingId
       });
-    } catch (err) {
-      console.error('[SES ERROR - DEMO]', err);
+    } catch {
       return buildResponse(503, {
         success: false,
         error: 'Unable to send your request right now. Please try again or contact info@techjagannath.com directly.',
@@ -313,15 +310,12 @@ ${message.trim()}
       const client = customSesClient || sesClient;
       await client.send(new SendEmailCommand(sendParams));
 
-      console.log(`[SES SUCCESS] Contact inquiry ${inquiryId} delivered to ${RECEIVER_EMAIL}`);
-
       return buildResponse(201, {
         success: true,
         message: 'Thank you! Your request has been transmitted directly to our executive team. We will respond within 4 business hours.',
         inquiryId
       });
-    } catch (err) {
-      console.error('[SES ERROR - CONTACT]', err);
+    } catch {
       return buildResponse(503, {
         success: false,
         error: 'Unable to send your request right now. Please try again or contact info@techjagannath.com directly.',

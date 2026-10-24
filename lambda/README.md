@@ -30,7 +30,7 @@ Amazon SES (Delivers to info@techjagannath.com)
 ### Step 1: Create IAM Execution Role for Lambda
 1. In the AWS Console, open **IAM** ➔ **Roles** ➔ **Create role**.
 2. Select **AWS service** and use case **Lambda**.
-3. Create an inline policy or customer-managed policy using the JSON from [`iam-policy.json`](./iam-policy.json).
+3. Create an inline policy or customer-managed policy using the JSON from [`iam-policy.json`](./iam-policy.json). Do not attach `AWSLambdaBasicExecutionRole` if you do not want Lambda execution logs written to CloudWatch.
 4. Name the role: `techjagannath-api-lambda-role`.
 
 ### Step 2: Create AWS Lambda Function
@@ -63,4 +63,4 @@ Amazon SES (Delivers to info@techjagannath.com)
    * **Type**: `200 (Rewrite)`
 3. Save changes.
 
-Now, all requests from `techjagannath.com/api/*` seamlessly route through your Lambda to Amazon SES without CORS issues or frontend URL alterations!
+Now, all requests from `techjagannath.com/api/*` seamlessly route through your Lambda to Amazon SES without CORS issues or frontend URL alterations. The Lambda role needs only the SES permissions in `iam-policy.json`; without CloudWatch Logs permissions, Lambda execution logs will not be retained there.

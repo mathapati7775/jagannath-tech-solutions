@@ -3,6 +3,8 @@
  * World-Class Enterprise AI & SaaS Interactive UI/UX
  */
 
+const API_BASE_URL = 'https://9wey8ujwyk.execute-api.ap-south-1.amazonaws.com';
+
 document.addEventListener('DOMContentLoaded', () => {
   initCentralContactLinks();
   initDataDrivenRendering();
@@ -1416,7 +1418,7 @@ async function handleModalSubmit(e) {
   };
 
   try {
-    const res = await fetch('/api/consultation', {
+    const res = await fetch(`${API_BASE_URL}/api/consultation`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
@@ -1520,7 +1522,7 @@ async function handleContactSubmit(e) {
   };
 
   try {
-    const res = await fetch('/api/contact', {
+    const res = await fetch(`${API_BASE_URL}/api/contact`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
